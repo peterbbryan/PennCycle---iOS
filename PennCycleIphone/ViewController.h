@@ -12,6 +12,6 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet MKMapView *maps;
-
+@property (weak, nonatomic) IBOutlet UITextField *pennCardTextField;
 
 @end

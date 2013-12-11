@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
+#import "SignUpViewController.h"
 
 
 @interface ViewController ()
@@ -15,6 +16,17 @@
 @end
 
 @implementation ViewController
+
+-(IBAction)submitPennCard:(id)sender{
+    SignUpViewController *begin = [self.storyboard instantiateViewControllerWithIdentifier:@"signup"];
+    begin.penncard = _pennCardTextField.text;
+    [self.navigationController pushViewController:begin animated:YES];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_pennCardTextField resignFirstResponder];
+}
 
 - (void)viewDidLoad
 {

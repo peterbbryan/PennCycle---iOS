@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5827D7A818271520004944B3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5827D7A718271520004944B3 /* MapKit.framework */; };
+		584F6C7E18414605004F7853 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F6C7D18414605004F7853 /* SignUpViewController.m */; };
 		58811EE218133121006C538A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58811EE118133121006C538A /* Foundation.framework */; };
 		58811EE418133121006C538A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58811EE318133121006C538A /* CoreGraphics.framework */; };
 		58811EE618133121006C538A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58811EE518133121006C538A /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		5827D7A718271520004944B3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		584F6C7C18414605004F7853 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		584F6C7D18414605004F7853 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		58811EDE18133121006C538A /* penncycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = penncycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58811EE118133121006C538A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58811EE318133121006C538A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,8 @@
 				58811EF318133121006C538A /* Main.storyboard */,
 				58811EF618133121006C538A /* ViewController.h */,
 				58811EF718133121006C538A /* ViewController.m */,
+				584F6C7C18414605004F7853 /* SignUpViewController.h */,
+				584F6C7D18414605004F7853 /* SignUpViewController.m */,
 				58811EF918133121006C538A /* Images.xcassets */,
 				58811EE818133121006C538A /* Supporting Files */,
 			);
@@ -259,6 +264,7 @@
 			files = (
 				58811EF818133121006C538A /* ViewController.m in Sources */,
 				58811EF218133121006C538A /* AppDelegate.m in Sources */,
+				584F6C7E18414605004F7853 /* SignUpViewController.m in Sources */,
 				58811EEE18133121006C538A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
