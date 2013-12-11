@@ -6,5 +6,5 @@ build
 
 
 xcuserdata
-*.xcuserstatexcuserdata
+*.xcuserstate
 *.xcworkspace
