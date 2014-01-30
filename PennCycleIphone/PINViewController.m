@@ -7,6 +7,7 @@
 //
 
 #import "PINViewController.h"
+#import "ASIFormDataRequest.h"
 
 @interface PINViewController ()
 
@@ -21,10 +22,46 @@
         // Custom initialization
     }
     return self;
+    
+    
+    
+}
+
+- (IBAction)login:(id)sender{
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.penncycle.org/mobile/verify/"];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    
+    [request setPostValue:_penncard forKey:@"penncard"];
+    [request setPostValue:_pinField.text forKey:@"pin"];
+    
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSMutableDictionary *dict = [NSJSONSerialization JSONObjectWithData:[request responseData] options:0 error:nil];
+                
+        if ([dict objectForKey:@"error"]){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Incorrect PIN" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        else{
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setObject:_pinField.text forKey:@"pin"];
+            [prefs setObject:_pinField.text forKey:@"pin"];
+            [prefs setObject:_penncard forKey:@"penncard"];
+            [prefs synchronize];
+            
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *controller = [sb instantiateViewControllerWithIdentifier:@"TabBar"];
+            [self presentViewController:controller animated:YES completion:NULL];
+        }
+    }
 }
 
 - (void)viewDidLoad
 {
+    
+    [_pinField becomeFirstResponder];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

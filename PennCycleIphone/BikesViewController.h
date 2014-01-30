@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface BikesViewController : UIViewController
+@interface BikesViewController : UIViewController{
+    NSMutableArray *bikes;
+}
+@property (weak, nonatomic) IBOutlet UITableView *bikeTable;
 
 @end

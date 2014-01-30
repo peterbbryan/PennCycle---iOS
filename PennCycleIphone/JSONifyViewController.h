@@ -10,4 +10,6 @@
 
 @interface JSONifyViewController : UIViewController
 
++ (NSString *)addParam: (NSString *)oldName :(NSString *)paramName :(NSString *)value :(BOOL)boolean;
+
 @end

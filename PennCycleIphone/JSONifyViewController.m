@@ -23,6 +23,20 @@
     return self;
 }
 
++ (NSString *)addParam: (NSString *)oldName :(NSString *)paramName :(NSString *)value :(BOOL)boolean{
+    NSString *returnString = oldName;
+    if ([oldName hasSuffix:@"/"]){
+        if (boolean) returnString = [returnString stringByAppendingString:@"?"];
+    }
+    else{
+        returnString = [returnString stringByAppendingString:@"&"];
+    }
+    returnString = [returnString stringByAppendingString:paramName];
+    returnString = [returnString stringByAppendingString:@"="];
+    returnString = [returnString stringByAppendingString:value];
+    return returnString;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

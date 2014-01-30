@@ -10,4 +10,6 @@
 
 @interface ReportIssueViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *issueDescription;
+
 @end

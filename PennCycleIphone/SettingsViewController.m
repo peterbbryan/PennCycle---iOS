@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "ViewController.h"
 
 @interface SettingsViewController ()
 
@@ -21,6 +22,16 @@
         // Custom initialization
     }
     return self;
+}
+
+-(IBAction)signOut:(id)sender{
+    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"penncard"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pin"];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *controller = [sb instantiateViewControllerWithIdentifier:@"penncycle"];
+
+    [self presentViewController:controller animated:YES completion:NULL];
 }
 
 - (void)viewDidLoad

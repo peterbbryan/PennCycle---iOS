@@ -10,4 +10,7 @@
 
 @interface PINViewController : UIViewController
 
+@property (strong, nonatomic) NSString *penncard;
+@property (weak, nonatomic) IBOutlet UITextField *pinField;
+
 @end

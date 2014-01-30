@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface CheckInViewController : UIViewController
+@interface CheckInViewController : UIViewController <CLLocationManagerDelegate>{
+    NSMutableArray *stations;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *stationTable;
+@property (weak, nonatomic) IBOutlet UILabel *nearest;
 
 @end

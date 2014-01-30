@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface CheckOutViewController : UIViewController
+@interface CheckOutViewController : UIViewController{
+    NSMutableArray *bikes;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *bikeTable;
 
 @end
