@@ -7,6 +7,8 @@
 //
 
 #import "SignUpViewController.h"
+#import "JSONifyViewController.h"
+#import "ASIFormDataRequest.h"
 
 @interface SignUpViewController ()
 
@@ -23,8 +25,55 @@
     return self;
 }
 
+-(IBAction)submit:(id)sender{
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.penncycle.org/mobile/signup/"];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    
+    NSString *penncard =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_penncard').value"];
+    NSString *name =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_name').value"];
+    NSString *phone =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_phone').value"];
+    NSString *email =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_email').value"];
+    NSString *last_two =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_last_two').value"];
+    NSString *grad_year =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_grad_year').value"];
+    NSString *living_location =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_living_location').value"];
+    NSString *maleCheck =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_gender_1').checked"];
+    NSString *femaleCheck =[_webview stringByEvaluatingJavaScriptFromString:@"document.getElementById('id_gender_2').checked"];
+    NSString *gender = [NSString string];
+    
+    if ([maleCheck isEqualToString:@"true"]){
+        gender = @"M";
+    }
+    if ([femaleCheck isEqualToString:@"true"]){
+        gender = @"F";
+    }
+    
+    [request setPostValue:penncard forKey:@"penncard"];
+    [request setPostValue:name forKey:@"name"];
+    [request setPostValue:phone forKey:@"phone"];
+    [request setPostValue:email forKey:@"email"];
+    [request setPostValue:penncard forKey:@"penncard"];
+    [request setPostValue:last_two forKey:@"last_two"];
+    [request setPostValue:grad_year forKey:@"grad_year"];
+    [request setPostValue:living_location forKey:@"living_location"];
+    [request setPostValue:gender forKey:@"gender"];
+
+    [request startSynchronous];
+    
+    NSError *error = [request error];
+    
+    if (!error) {
+        NSData *response = [request responseData];
+        NSMutableDictionary *dict = [NSJSONSerialization JSONObjectWithData:response options:0 error:nil];
+        [_webview loadHTMLString:[dict objectForKey:@"signup_form"] baseURL:nil];
+    }
+}
+
 - (void)viewDidLoad
 {
+    
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    
     NSString *host = @"http://www.penncycle.org/mobile";
     NSString *action = @"check_for_student";
     
@@ -33,8 +82,6 @@
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json-rpc" forHTTPHeaderField:@"Content-Type"];
     
-    NSLog(_penncard);
-    
      NSMutableDictionary *requestDictionary = [[NSMutableDictionary alloc] init];
     [requestDictionary setValue:_penncard forKey:@"penncard"];
     
@@ -42,24 +89,14 @@
     NSData *theBodyData =[NSJSONSerialization dataWithJSONObject:requestDictionary options:0 error:&error];
     [request setHTTPBody:theBodyData];
     
-    //NSMutableDictionary *requestDictionary = [[NSMutableDictionary alloc] init];
-    //[requestDictionary setObject:[NSString stringWithString:@"12"] forKey:@"foo"];
-    //[requestDictionary setObject:[NSString stringWithString:@"*"] forKey:@"bar"];
-    
-    //NSError *error;
-
-    //[[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
     __block NSURLResponse* theResponse = nil;
     __block NSData *theData = nil;
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
-        NSLog([error description]);
         theResponse = response;
         theData = data;
         NSMutableDictionary *array = [NSJSONSerialization JSONObjectWithData:theData options:0 error:nil];
         
-        NSLog([array description]);
         [_webview loadHTMLString:[array objectForKey:@"signup_form"] baseURL:nil];
     }];
 }

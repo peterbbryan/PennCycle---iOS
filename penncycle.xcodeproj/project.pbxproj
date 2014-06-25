@@ -8,6 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		5827D7A818271520004944B3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5827D7A718271520004944B3 /* MapKit.framework */; };
+		583769B51899F8EB0049A9EB /* 529-bicycle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 583769B41899F8EB0049A9EB /* 529-bicycle@2x.png */; };
+		583769B71899FCB10049A9EB /* 665-gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 583769B61899FCB10049A9EB /* 665-gear@2x.png */; };
+		583769B91899FD330049A9EB /* 592-compose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 583769B81899FD330049A9EB /* 592-compose@2x.png */; };
+		583769BB1899FD850049A9EB /* 582-warning-sign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 583769BA1899FD850049A9EB /* 582-warning-sign@2x.png */; };
+		583769BD1899FDB00049A9EB /* 523-cyclist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 583769BC1899FDB00049A9EB /* 523-cyclist@2x.png */; };
+		583769C01899FE690049A9EB /* ReportIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583769BF1899FE690049A9EB /* ReportIssueViewController.m */; };
+		583769C3189A061D0049A9EB /* BikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583769C2189A061D0049A9EB /* BikesViewController.m */; };
+		583769C6189A18F90049A9EB /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583769C5189A18F90049A9EB /* CheckOutViewController.m */; };
+		583B7F9318933245001CD855 /* JSONifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7F9218933245001CD855 /* JSONifyViewController.m */; };
+		583B7FA91894BB15001CD855 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7F961894BB15001CD855 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583B7FAA1894BB15001CD855 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7F991894BB15001CD855 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583B7FAB1894BB15001CD855 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7F9B1894BB15001CD855 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583B7FAC1894BB15001CD855 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7F9D1894BB15001CD855 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583B7FAD1894BB15001CD855 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7F9F1894BB15001CD855 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583B7FAE1894BB15001CD855 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7FA11894BB15001CD855 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583B7FAF1894BB15001CD855 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7FA51894BB15001CD855 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583B7FB01894BB15001CD855 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7FA71894BB15001CD855 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583B7FB21894BC0C001CD855 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583B7FB11894BC0C001CD855 /* CFNetwork.framework */; };
+		583B7FB41894BC16001CD855 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583B7FB31894BC16001CD855 /* SystemConfiguration.framework */; };
+		583B7FB61894BC21001CD855 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583B7FB51894BC21001CD855 /* MobileCoreServices.framework */; };
+		583B7FB81894BC41001CD855 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 583B7FB71894BC41001CD855 /* libz.dylib */; };
+		583B7FBB1894BE78001CD855 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B7FBA1894BE78001CD855 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		583E6D5D18F241AC00C1585E /* 1030-globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 583E6D5C18F241AC00C1585E /* 1030-globe@2x.png */; };
+		583E6D6018F2428900C1585E /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583E6D5F18F2428900C1585E /* MapsViewController.m */; };
+		584CEC45189AE9EE00244F1A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CEC44189AE9EE00244F1A /* SettingsViewController.m */; };
 		584F6C7E18414605004F7853 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F6C7D18414605004F7853 /* SignUpViewController.m */; };
 		58811EE218133121006C538A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58811EE118133121006C538A /* Foundation.framework */; };
 		58811EE418133121006C538A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58811EE318133121006C538A /* CoreGraphics.framework */; };
@@ -24,6 +49,8 @@
 		58811F0B18133121006C538A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58811F0918133121006C538A /* InfoPlist.strings */; };
 		58811F0D18133121006C538A /* PennCycleIphoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58811F0C18133121006C538A /* PennCycleIphoneTests.m */; };
 		58811F17181331BA006C538A /* PennCycle-Logo-3-web-570.png in Resources */ = {isa = PBXBuildFile; fileRef = 58811F16181331BA006C538A /* PennCycle-Logo-3-web-570.png */; };
+		58D47A83188DC08A00228665 /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D47A82188DC08A00228665 /* CheckInViewController.m */; };
+		58E5F6E81894F319004C28F7 /* PINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E5F6E71894F319004C28F7 /* PINViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +65,50 @@
 
 /* Begin PBXFileReference section */
 		5827D7A718271520004944B3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		583769B41899F8EB0049A9EB /* 529-bicycle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "529-bicycle@2x.png"; sourceTree = "<group>"; };
+		583769B61899FCB10049A9EB /* 665-gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "665-gear@2x.png"; sourceTree = "<group>"; };
+		583769B81899FD330049A9EB /* 592-compose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "592-compose@2x.png"; sourceTree = "<group>"; };
+		583769BA1899FD850049A9EB /* 582-warning-sign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "582-warning-sign@2x.png"; sourceTree = "<group>"; };
+		583769BC1899FDB00049A9EB /* 523-cyclist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "523-cyclist@2x.png"; sourceTree = "<group>"; };
+		583769BE1899FE690049A9EB /* ReportIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportIssueViewController.h; sourceTree = "<group>"; };
+		583769BF1899FE690049A9EB /* ReportIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportIssueViewController.m; sourceTree = "<group>"; };
+		583769C1189A061D0049A9EB /* BikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikesViewController.h; sourceTree = "<group>"; };
+		583769C2189A061D0049A9EB /* BikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikesViewController.m; sourceTree = "<group>"; };
+		583769C4189A18F90049A9EB /* CheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOutViewController.h; sourceTree = "<group>"; };
+		583769C5189A18F90049A9EB /* CheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOutViewController.m; sourceTree = "<group>"; };
+		583B7F9118933244001CD855 /* JSONifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONifyViewController.h; sourceTree = "<group>"; };
+		583B7F9218933245001CD855 /* JSONifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONifyViewController.m; sourceTree = "<group>"; };
+		583B7F951894BB15001CD855 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		583B7F961894BB15001CD855 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		583B7F971894BB15001CD855 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		583B7F981894BB15001CD855 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		583B7F991894BB15001CD855 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		583B7F9A1894BB15001CD855 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		583B7F9B1894BB15001CD855 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		583B7F9C1894BB15001CD855 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		583B7F9D1894BB15001CD855 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		583B7F9E1894BB15001CD855 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		583B7F9F1894BB15001CD855 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		583B7FA01894BB15001CD855 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		583B7FA11894BB15001CD855 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		583B7FA21894BB15001CD855 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		583B7FA31894BB15001CD855 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		583B7FA41894BB15001CD855 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		583B7FA51894BB15001CD855 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		583B7FA61894BB15001CD855 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		583B7FA71894BB15001CD855 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		583B7FA81894BB15001CD855 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		583B7FB11894BC0C001CD855 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		583B7FB31894BC16001CD855 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		583B7FB51894BC21001CD855 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		583B7FB71894BC41001CD855 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		583B7FB91894BE78001CD855 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		583B7FBA1894BE78001CD855 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		583E6D5C18F241AC00C1585E /* 1030-globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1030-globe@2x.png"; sourceTree = "<group>"; };
+		583E6D5E18F2428900C1585E /* MapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapsViewController.h; sourceTree = "<group>"; };
+		583E6D5F18F2428900C1585E /* MapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapsViewController.m; sourceTree = "<group>"; };
+		584CEC43189AE9EE00244F1A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		584CEC44189AE9EE00244F1A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		584F6C7C18414605004F7853 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		584F6C7D18414605004F7853 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		58811EDE18133121006C538A /* penncycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = penncycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +121,6 @@
 		58811EEF18133121006C538A /* penncycle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "penncycle-Prefix.pch"; sourceTree = "<group>"; };
 		58811EF018133121006C538A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58811EF118133121006C538A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		58811EF418133121006C538A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58811EF618133121006C538A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		58811EF718133121006C538A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		58811EF918133121006C538A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -60,6 +130,11 @@
 		58811F0A18133121006C538A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58811F0C18133121006C538A /* PennCycleIphoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennCycleIphoneTests.m; sourceTree = "<group>"; };
 		58811F16181331BA006C538A /* PennCycle-Logo-3-web-570.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PennCycle-Logo-3-web-570.png"; sourceTree = "<group>"; };
+		58D47A81188DC08A00228665 /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
+		58D47A82188DC08A00228665 /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
+		58E5F6E51894D060004C28F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		58E5F6E61894F319004C28F7 /* PINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINViewController.h; sourceTree = "<group>"; };
+		58E5F6E71894F319004C28F7 /* PINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PINViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +142,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583B7FB81894BC41001CD855 /* libz.dylib in Frameworks */,
+				583B7FB61894BC21001CD855 /* MobileCoreServices.framework in Frameworks */,
+				583B7FB41894BC16001CD855 /* SystemConfiguration.framework in Frameworks */,
+				583B7FB21894BC0C001CD855 /* CFNetwork.framework in Frameworks */,
 				5827D7A818271520004944B3 /* MapKit.framework in Frameworks */,
 				58811EE418133121006C538A /* CoreGraphics.framework in Frameworks */,
 				58811EE618133121006C538A /* UIKit.framework in Frameworks */,
@@ -87,6 +166,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		583B7F941894BAF5001CD855 /* ASI */ = {
+			isa = PBXGroup;
+			children = (
+				583B7F951894BB15001CD855 /* ASIAuthenticationDialog.h */,
+				583B7F961894BB15001CD855 /* ASIAuthenticationDialog.m */,
+				583B7F971894BB15001CD855 /* ASICacheDelegate.h */,
+				583B7F981894BB15001CD855 /* ASIDataCompressor.h */,
+				583B7F991894BB15001CD855 /* ASIDataCompressor.m */,
+				583B7F9A1894BB15001CD855 /* ASIDataDecompressor.h */,
+				583B7F9B1894BB15001CD855 /* ASIDataDecompressor.m */,
+				583B7F9C1894BB15001CD855 /* ASIDownloadCache.h */,
+				583B7F9D1894BB15001CD855 /* ASIDownloadCache.m */,
+				583B7F9E1894BB15001CD855 /* ASIFormDataRequest.h */,
+				583B7F9F1894BB15001CD855 /* ASIFormDataRequest.m */,
+				583B7FA01894BB15001CD855 /* ASIHTTPRequest.h */,
+				583B7FA11894BB15001CD855 /* ASIHTTPRequest.m */,
+				583B7FA21894BB15001CD855 /* ASIHTTPRequestConfig.h */,
+				583B7FA31894BB15001CD855 /* ASIHTTPRequestDelegate.h */,
+				583B7FA41894BB15001CD855 /* ASIInputStream.h */,
+				583B7FA51894BB15001CD855 /* ASIInputStream.m */,
+				583B7FA61894BB15001CD855 /* ASINetworkQueue.h */,
+				583B7FA71894BB15001CD855 /* ASINetworkQueue.m */,
+				583B7FA81894BB15001CD855 /* ASIProgressDelegate.h */,
+				583B7FB91894BE78001CD855 /* Reachability.h */,
+				583B7FBA1894BE78001CD855 /* Reachability.m */,
+			);
+			name = ASI;
+			sourceTree = "<group>";
+		};
 		58811ED518133121006C538A = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +217,10 @@
 		58811EE018133121006C538A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				583B7FB71894BC41001CD855 /* libz.dylib */,
+				583B7FB51894BC21001CD855 /* MobileCoreServices.framework */,
+				583B7FB31894BC16001CD855 /* SystemConfiguration.framework */,
+				583B7FB11894BC0C001CD855 /* CFNetwork.framework */,
 				5827D7A718271520004944B3 /* MapKit.framework */,
 				58811EE118133121006C538A /* Foundation.framework */,
 				58811EE318133121006C538A /* CoreGraphics.framework */,
@@ -121,6 +233,7 @@
 		58811EE718133121006C538A /* PennCycleIphone */ = {
 			isa = PBXGroup;
 			children = (
+				583B7F941894BAF5001CD855 /* ASI */,
 				58811F16181331BA006C538A /* PennCycle-Logo-3-web-570.png */,
 				58811EF018133121006C538A /* AppDelegate.h */,
 				58811EF118133121006C538A /* AppDelegate.m */,
@@ -129,6 +242,22 @@
 				58811EF718133121006C538A /* ViewController.m */,
 				584F6C7C18414605004F7853 /* SignUpViewController.h */,
 				584F6C7D18414605004F7853 /* SignUpViewController.m */,
+				58D47A81188DC08A00228665 /* CheckInViewController.h */,
+				58D47A82188DC08A00228665 /* CheckInViewController.m */,
+				583B7F9118933244001CD855 /* JSONifyViewController.h */,
+				583B7F9218933245001CD855 /* JSONifyViewController.m */,
+				58E5F6E61894F319004C28F7 /* PINViewController.h */,
+				58E5F6E71894F319004C28F7 /* PINViewController.m */,
+				583E6D5E18F2428900C1585E /* MapsViewController.h */,
+				583E6D5F18F2428900C1585E /* MapsViewController.m */,
+				583769BE1899FE690049A9EB /* ReportIssueViewController.h */,
+				583769BF1899FE690049A9EB /* ReportIssueViewController.m */,
+				583769C1189A061D0049A9EB /* BikesViewController.h */,
+				583769C2189A061D0049A9EB /* BikesViewController.m */,
+				583769C4189A18F90049A9EB /* CheckOutViewController.h */,
+				583769C5189A18F90049A9EB /* CheckOutViewController.m */,
+				584CEC43189AE9EE00244F1A /* SettingsViewController.h */,
+				584CEC44189AE9EE00244F1A /* SettingsViewController.m */,
 				58811EF918133121006C538A /* Images.xcassets */,
 				58811EE818133121006C538A /* Supporting Files */,
 			);
@@ -138,6 +267,12 @@
 		58811EE818133121006C538A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				583E6D5C18F241AC00C1585E /* 1030-globe@2x.png */,
+				583769B41899F8EB0049A9EB /* 529-bicycle@2x.png */,
+				583769BC1899FDB00049A9EB /* 523-cyclist@2x.png */,
+				583769B81899FD330049A9EB /* 592-compose@2x.png */,
+				583769B61899FCB10049A9EB /* 665-gear@2x.png */,
+				583769BA1899FD850049A9EB /* 582-warning-sign@2x.png */,
 				58811EE918133121006C538A /* penncycle-Info.plist */,
 				58811EEA18133121006C538A /* InfoPlist.strings */,
 				58811EED18133121006C538A /* main.m */,
@@ -211,6 +346,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = PeterBryan;
 				TargetAttributes = {
+					58811EDD18133121006C538A = {
+						DevelopmentTeam = PUG77A23A9;
+					};
 					58811EFE18133121006C538A = {
 						TestTargetID = 58811EDD18133121006C538A;
 					};
@@ -241,9 +379,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				58811EFA18133121006C538A /* Images.xcassets in Resources */,
+				583769BD1899FDB00049A9EB /* 523-cyclist@2x.png in Resources */,
 				58811EEC18133121006C538A /* InfoPlist.strings in Resources */,
 				58811F17181331BA006C538A /* PennCycle-Logo-3-web-570.png in Resources */,
+				583769B51899F8EB0049A9EB /* 529-bicycle@2x.png in Resources */,
+				583769BB1899FD850049A9EB /* 582-warning-sign@2x.png in Resources */,
+				583E6D5D18F241AC00C1585E /* 1030-globe@2x.png in Resources */,
 				58811EF518133121006C538A /* Main.storyboard in Resources */,
+				583769B91899FD330049A9EB /* 592-compose@2x.png in Resources */,
+				583769B71899FCB10049A9EB /* 665-gear@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,9 +407,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				58811EF818133121006C538A /* ViewController.m in Sources */,
+				583769C01899FE690049A9EB /* ReportIssueViewController.m in Sources */,
+				583B7FAF1894BB15001CD855 /* ASIInputStream.m in Sources */,
+				58D47A83188DC08A00228665 /* CheckInViewController.m in Sources */,
+				583B7FAC1894BB15001CD855 /* ASIDownloadCache.m in Sources */,
+				583769C3189A061D0049A9EB /* BikesViewController.m in Sources */,
+				58E5F6E81894F319004C28F7 /* PINViewController.m in Sources */,
+				584CEC45189AE9EE00244F1A /* SettingsViewController.m in Sources */,
+				583B7FBB1894BE78001CD855 /* Reachability.m in Sources */,
+				583B7FAA1894BB15001CD855 /* ASIDataCompressor.m in Sources */,
 				58811EF218133121006C538A /* AppDelegate.m in Sources */,
+				583E6D6018F2428900C1585E /* MapsViewController.m in Sources */,
+				583B7FAE1894BB15001CD855 /* ASIHTTPRequest.m in Sources */,
 				584F6C7E18414605004F7853 /* SignUpViewController.m in Sources */,
+				583B7FAB1894BB15001CD855 /* ASIDataDecompressor.m in Sources */,
 				58811EEE18133121006C538A /* main.m in Sources */,
+				583B7FB01894BB15001CD855 /* ASINetworkQueue.m in Sources */,
+				583769C6189A18F90049A9EB /* CheckOutViewController.m in Sources */,
+				583B7FA91894BB15001CD855 /* ASIAuthenticationDialog.m in Sources */,
+				583B7FAD1894BB15001CD855 /* ASIFormDataRequest.m in Sources */,
+				583B7F9318933245001CD855 /* JSONifyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +460,7 @@
 		58811EF318133121006C538A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				58811EF418133121006C538A /* Base */,
+				58E5F6E51894D060004C28F7 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -332,7 +493,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Audrey Edmondson (H56H29Y2DX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Audrey Edmondson (H56H29Y2DX)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -371,7 +533,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Audrey Edmondson (H56H29Y2DX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Audrey Edmondson (H56H29Y2DX)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -392,10 +555,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Audrey Edmondson (PUG77A23A9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Audrey Edmondson (PUG77A23A9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennCycleIphone/penncycle-Prefix.pch";
 				INFOPLIST_FILE = "PennCycleIphone/penncycle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = penncycle;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -405,10 +573,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Audrey Edmondson (PUG77A23A9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Audrey Edmondson (PUG77A23A9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennCycleIphone/penncycle-Prefix.pch";
 				INFOPLIST_FILE = "PennCycleIphone/penncycle-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = penncycle;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -10,6 +10,8 @@
 #import "ASIFormDataRequest.h"
 #import "ASIHTTPRequest.h"
 #import "CheckOutViewController.h"
+#import <MapKit/MapKit.h>
+
 
 @interface CheckInViewController ()
 
@@ -27,24 +29,87 @@
 }
 
 
+-(IBAction)currentCombo:(id)sender{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Bike Combo" message:[prefs objectForKey:@"combo"] delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+    NSString *host = @"http://www.penncycle.org/mobile";
+    NSString *action = @"bike_data";
+    
+    NSMutableURLRequest *request;
+    request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/", host, action]]];
+    
+    [request setValue:@"application/json-rpc" forHTTPHeaderField:@"Content-Type"];
+    
+    //[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    __block NSURLResponse* theResponse = nil;
+    __block NSData *theData = nil;
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
+        theResponse = response;
+        theData = data;
+        
+        if (!error){
+            
+            
+            
+            NSMutableArray *array = [NSJSONSerialization JSONObjectWithData:theData options:0 error:nil];
+            
+            NSMutableDictionary *location;
+            for (location in array){
+                
+                CLLocationCoordinate2D coordinate;
+                NSNumber *latitude = [location objectForKey:@"latitude"];
+                coordinate.latitude = latitude.doubleValue;
+                NSNumber *longitude = [location objectForKey:@"longitude"];
+                coordinate.longitude = longitude.doubleValue;
+                
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                annotation.coordinate = coordinate;
+                annotation.title = [@"" stringByAppendingString: [NSString stringWithFormat:@"%@", [location objectForKey:@"location"]]];
+                [_maps addAnnotation:annotation];
+                
+            }
+        }
+        else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Uh, oh! Something went wrong!" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
+    }];
+    
+    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(39.949, -75.195);
+    MKCoordinateRegion adjustedRegion = [_maps regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 2000, 2000)];
+    [_maps setRegion:adjustedRegion animated:YES];
+    
     
     
     //Check bike
     
-    NSURL *url = [NSURL URLWithString:@"http://www.penncycle.org/mobile/student_data/"];
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    NSURL *url = [NSURL URLWithString:@"http://www.penncycle.org/mobile/verify/"];
+    
+    ASIFormDataRequest *request2 = [ASIFormDataRequest requestWithURL:url];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
-    [request setPostValue:[prefs objectForKey:@"penncard"] forKey:@"penncard"];
+    [request2 setPostValue:[prefs objectForKey:@"penncard"] forKey:@"penncard"];
+    [request2 setPostValue:[prefs objectForKey:@"pin"] forKey:@"pin"];
     
-    [request startSynchronous];
+    [request2 startSynchronous];
     
-    NSError *error = [request error];
+    NSError *error = [request2 error];
     if (!error) {
-        NSMutableDictionary *dict = [NSJSONSerialization JSONObjectWithData:[request responseData] options:0 error:nil];
+        NSMutableDictionary *dict = [NSJSONSerialization JSONObjectWithData:[request2 responseData] options:0 error:nil];
+        
+        NSLog([dict description]);
         
         if ([dict objectForKey:@"error"]){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Uh, oh! Something went wrong!" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
@@ -52,13 +117,15 @@
         }
         else{
             
-            if ([dict objectForKey:@"current_ride"]){
-            }
-            else{
+            if ([dict objectForKey:@"current_ride"] == [NSNull null]){
                 
                 CheckOutViewController *begin = [self.storyboard instantiateViewControllerWithIdentifier:@"checkout"];
                 [self.navigationController pushViewController: begin animated:NO];
                 return;
+                
+            }
+            else{
+               
             }
             
         }
@@ -97,6 +164,9 @@
         
         NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES];
         stations = [newArray sortedArrayUsingDescriptors:[NSMutableArray arrayWithObject:descriptor]];
+        
+        NSLog([stations description]);
+        
         [_stationTable reloadData];
         
         _nearest.text = [@"Nearest location: " stringByAppendingString:[[stations objectAtIndex:0] objectForKey:@"name"]];
@@ -165,7 +235,8 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked in!" message:@"Thanks for checking in your bike! Make sure to lock up!" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
             [alert show];
             
-            
+            CheckOutViewController *begin = [self.storyboard instantiateViewControllerWithIdentifier:@"checkout"];
+            [self.navigationController pushViewController: begin animated:NO];
         }
     }
 }

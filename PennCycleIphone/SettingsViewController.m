@@ -29,7 +29,7 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"penncard"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"pin"];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *controller = [sb instantiateViewControllerWithIdentifier:@"penncycle"];
+    UIViewController *controller = [sb instantiateViewControllerWithIdentifier:@"navPage"];
 
     [self presentViewController:controller animated:YES completion:NULL];
 }

@@ -24,8 +24,109 @@
     }
     return self;
 }
-- (void)viewDidLoad
+-(void)viewWillAppear:(BOOL)animated
 {
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+    NSString *host = @"http://www.penncycle.org/mobile";
+    NSString *action = @"bike_data";
+    
+    NSMutableURLRequest *request;
+    request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/", host, action]]];
+    
+    [request setValue:@"application/json-rpc" forHTTPHeaderField:@"Content-Type"];
+    
+    //[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    __block NSURLResponse* theResponse = nil;
+    __block NSData *theData = nil;
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
+        theResponse = response;
+        theData = data;
+        
+        if (!error){
+            
+            NSMutableArray *array = [NSJSONSerialization JSONObjectWithData:theData options:0 error:nil];
+            
+            NSMutableDictionary *location;
+            for (location in array){
+                
+                CLLocationCoordinate2D coordinate;
+                NSNumber *latitude = [location objectForKey:@"latitude"];
+                coordinate.latitude = latitude.doubleValue;
+                NSNumber *longitude = [location objectForKey:@"longitude"];
+                coordinate.longitude = longitude.doubleValue;
+                
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                annotation.coordinate = coordinate;
+                annotation.title = [@"" stringByAppendingString: [NSString stringWithFormat:@"%@", [location objectForKey:@"location"]]];
+                [_maps addAnnotation:annotation];
+                
+            }
+        }
+        else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Uh, oh! Something went wrong!" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        
+    }];
+    
+    
+    
+    CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(39.949, -75.195);
+    MKCoordinateRegion adjustedRegion = [_maps regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 2000, 2000)];
+    [_maps setRegion:adjustedRegion animated:YES];
+    
+    
+    
+    
+    //Check bike
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.penncycle.org/mobile/verify/"];
+    
+    ASIFormDataRequest *request2 = [ASIFormDataRequest requestWithURL:url];
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    [request2 setPostValue:[prefs objectForKey:@"penncard"] forKey:@"penncard"];
+    [request2 setPostValue:[prefs objectForKey:@"pin"] forKey:@"pin"];
+    
+    [request2 startSynchronous];
+    
+    NSError *error = [request2 error];
+    if (!error) {
+        NSMutableDictionary *dict = [NSJSONSerialization JSONObjectWithData:[request2 responseData] options:0 error:nil];
+        
+        NSLog([dict description]);
+        
+        if ([dict objectForKey:@"error"]){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Uh, oh! Something went wrong!" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        else{
+            
+            if ([dict objectForKey:@"current_ride"] == [NSNull null]){
+                
+            }
+            else{
+            
+                CheckInViewController *begin = [self.storyboard instantiateViewControllerWithIdentifier:@"checkin"];
+                [self.navigationController pushViewController: begin animated:NO];
+                return;
+                
+            }
+        }
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Uh, oh! Something went wrong!" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+        [alert show];
+        
+    }
+    
+    
+    
     self.navigationItem.hidesBackButton = YES;
     
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
@@ -34,7 +135,7 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     
-    NSURL *url = [NSURL URLWithString:@"http://www.penncycle.org/mobile/bike_data/"];
+    url = [NSURL URLWithString:@"http://www.penncycle.org/mobile/bike_data/"];
     
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
         
@@ -122,11 +223,14 @@
                 
         if(![dict objectForKey:@"error"]){
             
+            [prefs setObject:[dict objectForKey:@"combo"] forKey:@"combo"];
+            
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks!" message:[@"Bike checked out successfully! Combo: " stringByAppendingString:[dict objectForKey:@"combo"]] delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
             [alert show];
             
-            CheckOutViewController *begin = [self.storyboard instantiateViewControllerWithIdentifier:@"checkout"];
+            CheckInViewController *begin = [self.storyboard instantiateViewControllerWithIdentifier:@"checkin"];
             [self.navigationController pushViewController: begin animated:NO];
+            
         }
         else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[dict objectForKey:@"error"] delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
